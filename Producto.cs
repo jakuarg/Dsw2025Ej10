@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 
 namespace Dsw2025Ej10
 {
@@ -18,7 +14,10 @@ namespace Dsw2025Ej10
             Descripcion = descripcion;
             Precio = precio;
         }
-
+        public string ObtenerDetalle()
+        {
+            return $"[{Id}] {Descripcion} [{Precio.ToString("C", CultureInfo.CurrentCulture)}]";
+        }
         public static List<Producto> CrearListaDeEjemplo()
         {
             return

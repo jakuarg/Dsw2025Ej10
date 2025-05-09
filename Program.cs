@@ -4,20 +4,28 @@
     {
         static void Main(string[] args)
         {
-            /* A partir de la lista de productos que se obtiene de Producto.CrearListaDeEjemplo()
-             * Resolver:
-             * 1. El primer producto 
-             * 2. El último producto
-             * 3. La suma de precios
-             * 4. El promedio de precios
-             * 5. Listar los productos con Id mayor a 15
-             * 6. Obtener una lista de cada producto con su nombre y el precio en formato moneda, luego mostrar los elementos
-             * 7. El producto con el precio más alto
-             * 8. El producto con el precio más bajo
-             * 9. Obtener y mostrar los productos cuyo precio sea mayor al promedio
-             * 10. Listar los productos ordenados por descripción de forma descendente
-             * Cada punto se debe realizar en un método distinto, en una nueva clase llamada Solucion
-             */
+            //Creo una lista de productos para manejarla desde el main
+            List<Producto> productos = Producto.CrearListaDeEjemplo();
+            //#1
+            Solucion.PrimerProducto(productos);
+            //#2
+            Solucion.UltimoProducto(productos);
+            //#3
+            Solucion.SumaDePrecios(productos);
+            //#4
+            Solucion.PromedioDePrecios(productos);
+            //#5
+            Solucion.ProductosConIdMayorA15(productos);
+            //#6
+            Solucion.ListaConPreciosEnFormatoMoneda(productos);
+            //#7
+            Solucion.ProductoConPrecioMasAlto(productos);
+            //#8
+            Solucion.ProductoConPrecioMasBajo(productos);
+            //#9
+            Solucion.ProductosConPrecioMayorAlPromedio(productos);
+            //#10
+            Solucion.ProductosOrdenadosPorDescripcion(productos);
         }
     }
 }
