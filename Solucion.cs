@@ -20,14 +20,14 @@ namespace Dsw2025Ej10
         {
             Console.WriteLine("==============================================================");
             Console.WriteLine($"Primer producto:");
-            Console.WriteLine($"{productos.FirstOrDefault().ObtenerDetalle()}");
+            Console.WriteLine($"{productos.First().ObtenerDetalle()}");
         }
 
         public static void UltimoProducto(List<Producto> productos)
         {
             Console.WriteLine("==============================================================");
             Console.WriteLine($"Último producto:");
-            Console.WriteLine($"{productos.LastOrDefault().ObtenerDetalle()}");
+            Console.WriteLine($"{productos.Last().ObtenerDetalle()}");
         }
         public static void SumaDePrecios(List<Producto> productos)
         {
@@ -37,7 +37,7 @@ namespace Dsw2025Ej10
         public static void PromedioDePrecios(List<Producto> productos)
         {
             Console.WriteLine("==============================================================");
-            Console.WriteLine($"Promedio de precios: ${productos.Average(p => p.Precio)}");
+            Console.WriteLine($"Promedio de precios: ${productos.Average(p => p.Precio):F2}");
         }
         public static void ProductosConIdMayorA15(List<Producto> productos)
         {
@@ -48,7 +48,7 @@ namespace Dsw2025Ej10
                 Console.WriteLine($"{producto.ObtenerDetalle()}");
             }
         }
-        public static void ListaConPreciosEnFormatoMoneda(List<Producto> productos)
+        public static void ListarProductos(List<Producto> productos)
         {
             Console.WriteLine("==============================================================");
             Console.WriteLine($"Lista con precios en formato moneda:");
@@ -61,19 +61,20 @@ namespace Dsw2025Ej10
         {
             Console.WriteLine("==============================================================");
             Console.WriteLine($"Producto con el precio más alto:");
-            Console.WriteLine($"{productos.OrderByDescending(p => p.Precio).FirstOrDefault().ObtenerDetalle()}");
+            Console.WriteLine($"{productos.OrderByDescending(p => p.Precio).First().ObtenerDetalle()}");
         }
         public static void ProductoConPrecioMasBajo(List<Producto> productos)
         {
             Console.WriteLine("==============================================================");
             Console.WriteLine($"Producto con el precio más bajo:");
-            Console.WriteLine($"{productos.OrderByDescending(p => p.Precio).LastOrDefault().ObtenerDetalle()}");
+            Console.WriteLine($"{productos.OrderBy(p => p.Precio).First().ObtenerDetalle()}");
         }
         public static void ProductosConPrecioMayorAlPromedio(List<Producto> productos)
         {
+            var promedio = productos.Average(p => p.Precio);
             Console.WriteLine("==============================================================");
             Console.WriteLine($"Productos con precio mayor al promedio:");
-            foreach (var producto in productos.Where(p => p.Precio > productos.Average(p => p.Precio)))
+            foreach (var producto in productos.Where(p => p.Precio > promedio))
             {
                 Console.WriteLine($"{producto.ObtenerDetalle()}");
             }

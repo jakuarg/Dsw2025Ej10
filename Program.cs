@@ -17,7 +17,7 @@
             //#5
             Solucion.ProductosConIdMayorA15(productos);
             //#6
-            Solucion.ListaConPreciosEnFormatoMoneda(productos);
+            Solucion.ListarProductos(productos);
             //#7
             Solucion.ProductoConPrecioMasAlto(productos);
             //#8
